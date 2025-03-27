@@ -1,10 +1,19 @@
-[gd_scene format=3 uid="uid://cmp6mj1qbqdam"]
+[gd_scene load_steps=3 format=3 uid="uid://cmp6mj1qbqdam"]
+
+[ext_resource type="Script" uid="uid://ux08me1deg01" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://eiiwcgt1kjtw" path="res://icon.svg" id="1_ig7tw"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_0xm2m")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="WebView" type="WebView" parent="CanvasLayer"]
 url = "res://ui/dist/index.html"
-offset_right = 40.0
-offset_bottom = 40.0
+transparent = true
+
+[node name="Icon" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(498, 214)
+texture = ExtResource("1_ig7tw")
+
+[connection signal="ipc_message" from="CanvasLayer/WebView" to="." method="_on_web_view_ipc_message"]
