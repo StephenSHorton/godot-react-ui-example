@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cmp6mj1qbqdam"]
+
+[node name="Main" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="WebView" type="WebView" parent="CanvasLayer"]
+url = "res://ui/dist/index.html"
+offset_right = 40.0
+offset_bottom = 40.0
